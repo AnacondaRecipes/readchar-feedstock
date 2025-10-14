@@ -1,24 +1,24 @@
 {% set name = "readchar" %}
-{% set version = "4.0.5" %}
+{% set version = "4.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/readchar-{{ version }}.tar.gz
-  sha256: 08a456c2d7c1888cde3f4688b542621b676eb38cd6cfed7eb6cb2e2905ddc826
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/readchar-{{ version }}.tar.gz
+  sha256: 91ce3faf07688de14d800592951e5575e9c7a3213738ed01d394dcc949b79adb
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true  # [py<38]
 
 requirements:
   host:
     - pip
     - python
-    - setuptools
-    - wheel
+    - setuptools >=61.0
   run:
     - python
 
