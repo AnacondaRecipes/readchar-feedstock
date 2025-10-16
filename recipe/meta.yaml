@@ -30,11 +30,11 @@ test:
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest -v tests/linux  # [linux]
+    - pytest -s -v tests/linux  # [linux]
     - pytest -v tests/windows  # [win]
   requires:
     - pip
-    - pytest>=6.0
+    - pytest >=6.0
 
 about:
   home: https://github.com/magmax/python-readchar
