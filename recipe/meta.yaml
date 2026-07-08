@@ -1,13 +1,13 @@
 {% set name = "readchar" %}
-{% set version = "4.2.1" %}
+{% set version = "4.2.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://github.com/magmax/python-{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2c3a6eb9a41c228ab8324b7abaff7a91ec5c8c450b5b81f0853b6f0855b9e692
+  sha256: fe6e320636b185a67eb412d7ad8eb2946a4381be3c07eb92193cecd728c12bff
 
 build:
   number: 0
@@ -18,6 +18,7 @@ requirements:
   host:
     - pip
     - python
+    - wheel
     - setuptools >=61.0
   run:
     - python
